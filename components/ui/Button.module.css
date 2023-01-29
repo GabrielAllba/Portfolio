@@ -1,0 +1,11 @@
+.button{
+    color: var(--navbar-text);
+    background: var(--button-background);
+    outline: none;
+    border: none;
+    padding: .5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
