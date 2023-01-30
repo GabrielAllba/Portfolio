@@ -1,0 +1,21 @@
+.title{
+    font-family: 'Inter-Bold';
+    margin: .5rem 0;
+}
+.date{
+    margin: .5rem 0;
+    color: var(--blog-date);
+}
+
+.content{
+    color: var(--blog-description);
+}
+.box{
+    cursor: pointer;
+    transition: .2s ease;
+}
+.box:hover{
+    transition: .2s ease;
+    box-shadow: var(--badge-text) 0px 0px 35px 0px;
+}
+

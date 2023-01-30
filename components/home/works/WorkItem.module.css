@@ -1,0 +1,30 @@
+.work_item_container{
+
+    margin: 1rem;
+}
+
+.image_container{
+    max-width: 100%;
+    padding: 3rem;
+    transition: .2s ease;
+    border-radius: 5px;
+}
+.image_content{
+    max-width: 100%
+}
+
+.image_container:hover{
+    transition: .2s ease;
+    box-shadow: #A8C6FF 0px 7px 29px 0px;
+    box-shadow: #A8C6FF 0px 0px 59px 0px;
+}
+
+.title{
+    font-family: 'Inter-Bold';
+    color: var(--work-title);
+    margin: .5rem 0;
+}
+.sub_title{
+    margin: .5rem 0;
+    color: var(--work-subtitle)
+}

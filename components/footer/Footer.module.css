@@ -1,0 +1,32 @@
+.navigation{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+}
+
+.anchor{
+    margin: 0 .5rem;
+    text-decoration: none;
+    padding: .5rem 1rem;
+    color: var(--navbar-text);
+    cursor: pointer;
+    transition: .2s ease;
+    border-radius: 5px;
+}
+.anchor:hover{
+    background-color: var(--button-background);
+    transition: .2s ease;
+}
+
+.list{
+    text-decoration: none;
+    list-style: none;
+}
+.footer_text{
+    color: var(--navbar-text)
+}
+.link{
+    margin: 0 .5rem;
+    text-decoration: none;
+}

@@ -1,0 +1,7 @@
+.badge{
+    padding: .5rem 1rem;
+    background: var(--badge-background);
+    color: var(--badge-text);
+    border-radius: 5px;
+    transition: .2s ease;
+}

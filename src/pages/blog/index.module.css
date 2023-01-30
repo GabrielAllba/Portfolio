@@ -1,0 +1,16 @@
+.sub_heading{
+    font-size: 1.5rem;
+    font-family: 'Inter-Bold';
+    color: var(--sub-heading-text);
+    font-size: 2rem;
+    margin-top: 5rem;
+}
+.ulitem{
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.blogitem{
+    margin: 1rem 0;
+}
+

@@ -1,13 +1,30 @@
 .title{
-    font-size: 4rem;
+    font-size: 3.5rem;
     text-align: center;
     word-wrap: break-word;
     font-family: 'Inter-Bold';
     color: var(--title-text);
+    margin: 0;
 }
-@media only screen and (max-width: 768) {
-    .title{
-       font-size: 3rem;
-        text-align: center;
-    }   
+.sub_title{
+    font-size: 2rem;
+    margin: 1rem 0;
+    color: var(--sub-title-text);
+    text-align: center;
+}
+
+.social_media{
+    margin: 1rem 0;
+    display: flex;
+}
+.social_media a{
+    margin: 0 .5rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.social_media a:hover{
+    transition: .2s ease;
+    box-shadow: var(--badge-text) 0px 7px 29px 0px;
+    box-shadow: var(--badge-text) 0px 0px 59px 0px;
 }

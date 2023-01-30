@@ -1,10 +1,14 @@
 import Router from "next/router";
 import { ThemeProvider } from "next-themes";
-import '../styles/globals.css'
-import Layout from "components/layout/Layout";
 import { useEffect, useState } from "react";
+
+import Layout from "components/layout/Layout";
+
 import Container from '@mui/material/Container'
-import Loading from "components/ui/Loading";
+import Loading from "components/ui/Loading/Loading";
+
+import '../styles/globals.css'
+
 function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -16,7 +20,7 @@ function MyApp({ Component, pageProps }) {
       console.log("finished");
       setTimeout(() => {
         setLoading(false);
-      },1500)
+      },0)
       
     };
     Router.events.on("routeChangeStart", start);
@@ -31,15 +35,15 @@ function MyApp({ Component, pageProps }) {
   }, []);
   return (
     <ThemeProvider themes={["dark", "light"]} enableSystem={false}>
-      <Container maxWidth="lg">
         {loading ? (
           <Loading></Loading>
         ) : (
           <Layout>
-            <Component {...pageProps} />
+            <Container maxWidth="lg">
+              <Component {...pageProps} />
+            </Container>
           </Layout>
         )}
-      </Container>
     </ThemeProvider>
   );
 }

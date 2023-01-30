@@ -1,0 +1,29 @@
+.sub_heading{
+    font-size: 1.5rem;
+    font-family: 'Inter-Bold';
+    text-align: center;
+    color: var(--sub-heading-text);
+    font-size: 2rem;
+}
+
+.collaborate_text{
+    color: var(--collaborate-text);
+    text-align: center;
+}
+
+.link{
+    color: var(--link)
+}
+.let_discuss{
+    width: 5rem;
+}
+
+.discuss_text{
+    text-decoration: none;   
+}
+
+.discuss_text:hover{
+      transition: .2s ease;
+    box-shadow: var(--badge-text) 0px 7px 29px 0px;
+    box-shadow: var(--badge-text) 0px 0px 59px 0px;
+}

@@ -1,0 +1,98 @@
+.experience_wrapper{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    
+    
+}
+
+.date{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    
+}
+.date_content{
+    color: var(--sub-heading-text);
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+.line{
+    position: relative;
+    width: 10%;
+}
+
+.circle{
+    width: 1rem;
+    height: 1rem;
+    background: var(--line-color);
+    position: absolute;
+    z-index: -2;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+.inner_line{
+    z-index: -2;
+    width: .2rem;
+    height: 100%;
+    background: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: var(--line-color);
+    transform: translate(-50%,-50%);
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    
+    width: 75%;
+    min-height: 10rem;
+    margin: .5rem;
+    
+}
+.card_content{
+    border: 1px solid var(--card-border);
+    background: var(--card-background);
+    border-radius: 5px;
+    padding: 2rem;
+}
+
+.child_heading{
+    font-family: 'Inter-Bold';
+    margin: .5rem .5rem;
+}
+
+.skills{
+    display: flex;
+    justify-content: flex-start ;
+    list-style: none;
+    padding: 0;
+    flex-wrap: wrap;
+    
+}
+.skill_item{
+    margin: .5rem;
+    margin-right: 0rem;
+}
+
+.description{
+    margin-left: .5rem;
+    color: var(--experience-description);
+    text-align: justify;
+}
+.showdescription{
+    color: var(--link);
+    cursor: pointer;
+}
+

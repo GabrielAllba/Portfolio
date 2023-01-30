@@ -1,12 +1,9 @@
-import { useState, useEffect } from "react";
-import { useTheme } from "next-themes";
-
 import { Box } from "@mui/system";
-import { Grid } from "@mui/material";
-import Container from "@mui/material/Container";
 
 import Gradient from "rgt";
 import classes from './index.module.css'
+import Badge from "components/ui/Badge/Badge";
+import {BsArrowUpRight} from 'react-icons/bs'
 
 function Hero(){
     return (
@@ -16,8 +13,7 @@ function Hero(){
             height: "100%",
             width: "100%",
             display: "inline-block",
-            p: 1,
-            mx: 1,
+            
           }}
           style={{
             display: "flex",
@@ -37,6 +33,18 @@ function Hero(){
             </Gradient>
             Enthusiasts
           </h1>
+          <p className={classes.sub_title}>Love design, code and organized something</p>
+          <div className={classes.social_media}>
+            <a href="" target='_blank'>
+              <Badge>LinkedIn</Badge>
+            </a>
+            <a>
+              <Badge>GitHub</Badge>
+            </a>
+            <a>
+              <Badge>CV</Badge>
+            </a>
+          </div>
         </Box>
       </Box>
     );
