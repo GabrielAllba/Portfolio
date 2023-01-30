@@ -5,54 +5,8 @@ import { useState } from 'react';
 import BlogItem from 'components/blogItem';
 import CustomCard from 'components/ui/CustomCard/CustomCard';
 
-function Blog(){
-    const dummy = [
-      {
-        id: "1",
-        title: "Welcome message",
-        publish_date: new Date("2022-07-01"),
-        color: ["#FFA6D6", "#A091FF"],
-        tags: ["Laravel 9", "JSON Web Token"],
-        description:
-          "Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration.",
-        content:
-          "Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.",
-      },
-      {
-        id: "2",
-        title: "Welcome message",
-        publish_date: new Date("2022-07-01"),
-        color: ["#FFA6D6", "#A091FF"],
-        tags: ["Laravel 9", "JSON Web Token"],
-        description:
-        "Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration.",
-        content:
-        "Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.",
-    },
-    {
-        id: "3",
-        title: "Welcome message",
-        color: ["#FFA6D6", "#A091FF"],
-        publish_date: new Date("2022-07-01"),
-        tags: ["Laravel 9", "JSON Web Token"],
-        description:
-        "Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration.",
-        content:
-        "Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.",
-    },
-    {
-        id: "4",
-        title: "Welcome message",
-        color: ["#FFA6D6", "#A091FF"],
-        publish_date: new Date("2022-07-01"),
-        tags: ["Laravel 9", "JSON Web Token"],
-        description:
-        "Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration.",
-        content:
-          "Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.",
-      },
-    ]; 
-
+function Blog(props){
+    const dummy = props.blogs
     const [input, setInput] = useState("");
     const inputHandler = (value) => {
         setInput(value)    
@@ -78,13 +32,14 @@ function Blog(){
               <BlogItem
                 className={classes.blogitem}
                 key={item.id}
+
                 id={item.id}
+                color={item.color}
                 title={item.title}
+                content={item.content}
                 publish_date={item.publish_date}
                 tags={item.tags}
                 description={item.description}
-                content={item.content}
-                color={item.color}
               ></BlogItem>
             </div>
           ))}
@@ -94,3 +49,56 @@ function Blog(){
 }
 
 export default Blog
+
+export async function getServerSideProps(){
+  const blog = await fetch(`http://localhost:3000/api/blog`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    
+  });
+  const results = await blog.json()
+  
+
+  const dataku = results.map((data) => ({
+    id: data.id,
+    color: data.color,
+    description: data.description,
+    publish_date: new Date(data.publish_date),
+    tags: data.tags,
+    title: data.title,
+    writerId: data.writerId,
+  }));
+
+  const options = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+
+  const datas = dataku.map((data) => ({
+    id: data.id,
+    color: data.color,
+    description: data.description,
+    publish_date: data.publish_date.toLocaleString("en-us", options),
+    tags: data.tags,
+    title: data.title,
+    writerId: data.writerId,
+  }));
+
+
+  return{
+    props: {
+      blogs: datas.map(data => ({
+        id: data.id,
+        color: data.color,
+        description: data.description,
+        publish_date: data.publish_date,
+        tags: data.tags,
+        title: data.title,
+        writerId: data.writerId
+      }))
+    }
+  }
+}

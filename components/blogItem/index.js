@@ -24,11 +24,7 @@ function BlogItem(props){
                     </Gradient>
                 </h3>
                 <p className={classes.date}>
-                    {props.publish_date.toLocaleDateString("en-us", {
-                        year: "numeric",
-                        month: "short",
-                        day: "numeric",
-                    })}
+                    {props.publish_date}
                 </p>
                 <ul style={{ display: "flex", padding: "0" }}>
                     {props.tags.map((tag) => {
@@ -42,7 +38,7 @@ function BlogItem(props){
                     );
                     })}
                 </ul>
-                <p className={classes.content}>{props.content}</p>
+                <p className={classes.content}>{props.description}</p>
             </CustomCard>
         </div>
     );

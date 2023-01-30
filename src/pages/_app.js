@@ -18,9 +18,8 @@ function MyApp({ Component, pageProps }) {
     };
     const end = () => {
       console.log("finished");
-      setTimeout(() => {
-        setLoading(false);
-      },0)
+      setLoading(false);
+      
       
     };
     Router.events.on("routeChangeStart", start);
