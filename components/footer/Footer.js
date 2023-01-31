@@ -1,10 +1,17 @@
 import Badge from 'components/ui/Badge/Badge';
 import classes from './Footer.module.css'
 import Gradient from 'rgt'
+import Link from 'next/link'
+
 function Footer(){
     return (
       <footer
-        style={{ textAlign: "center",paddingTop: '0rem', paddingBottom: "6rem", paddingLeft: "0" }}
+        style={{
+          textAlign: "center",
+          paddingTop: "0rem",
+          paddingBottom: "6rem",
+          paddingLeft: "0",
+        }}
       >
         <p
           style={{
@@ -19,33 +26,32 @@ function Footer(){
         </p>
         <p className={classes.footer_text}>Keep learning and leveling up.</p>
         <ul className={classes.navigation}>
-          <a className={classes.anchor}>
+          <Link className={classes.anchor} href='/' >
             <li className={classes.list}>About</li>
-          </a>
-          <a className={classes.anchor}>
+          </Link>
+          <Link className={classes.anchor} href='/' >
             <li className={classes.list}>Skills</li>
-          </a>
-          <a className={classes.anchor}>
+          </Link>
+          <Link className={classes.anchor} href='/'>
             <li className={classes.list}>Experience</li>
-          </a>
-          <a className={classes.anchor}>
+          </Link>
+          <Link className={classes.anchor} href='/'>
             <li className={classes.list}>Work</li>
-          </a>
-          <a className={classes.anchor}>
+          </Link>
+          <Link className={classes.anchor} href='/'>
             <li className={classes.list}>Awards</li>
-          </a>
-          <a className={classes.anchor}>
+          </Link>
+          <Link className={classes.anchor} href='/'>
             <li className={classes.list}>Blog</li>
-          </a>
+          </Link>
         </ul>
-        <div style={{display: 'flex', justifyContent: 'center'}}>
-            <a href='' className={classes.link}>
-                <Badge>LinkedIn</Badge>
-            </a>
-            <a href='' className={classes.link}>
-                <Badge>Github</Badge>
-            </a>
-           
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <Link href="" className={classes.link}>
+            <Badge>LinkedIn</Badge>
+          </Link>
+          <Link href="" className={classes.link}>
+            <Badge>Github</Badge>
+          </Link>
         </div>
         <p className={classes.footer_text}>2023 Gabriel Allba —— Indonesia</p>
       </footer>

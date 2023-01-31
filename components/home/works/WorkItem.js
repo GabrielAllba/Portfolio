@@ -1,6 +1,6 @@
 import classes from './WorkItem.module.css'
 import {Gradient} from 'react-gradient'
-
+import Link from 'next/link'
 function WorkItem(props){
     
     const gradients = [
@@ -12,7 +12,7 @@ function WorkItem(props){
       <div className={classes.work_item_container}>
         <h3 className={classes.title}>{props.title}</h3>
         <p className={classes.sub_title}>{props.subtitle}</p>
-        <a href={props.link}>
+        <Link href={props.link}>
           <Gradient
             property="background"
             gradients={gradients}
@@ -26,7 +26,7 @@ function WorkItem(props){
               style={{width: '100%'}}
             ></img>
           </Gradient>
-        </a>
+        </Link>
       </div>
     );
 }

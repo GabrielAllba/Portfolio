@@ -5,7 +5,7 @@ import classes from './index.module.css'
 import Badge from "components/ui/Badge/Badge";
 import {BsArrowUpRight} from 'react-icons/bs'
 import { Container } from "@mui/material";
-
+import Link from 'next/link'
 function Hero(){
     return (
       <Container maxWidth='lg'>
@@ -38,15 +38,15 @@ function Hero(){
               Love design, code and organized something
             </p>
             <div className={classes.social_media}>
-              <a href="" target="_blank">
+              <Link href="/" target="_blank">
                 <Badge>LinkedIn</Badge>
-              </a>
-              <a>
+              </Link>
+              <Link href='/'>
                 <Badge>GitHub</Badge>
-              </a>
-              <a>
+              </Link>
+              <Link href='/'>
                 <Badge>CV</Badge>
-              </a>
+              </Link>
             </div>
           </Box>
         </Box>
