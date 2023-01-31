@@ -4,7 +4,7 @@ import Gradient from 'rgt'
 function Footer(){
     return (
       <footer
-        style={{ textAlign: "center",paddingTop: '0rem', paddingBottom: "10rem", paddingLeft: "0" }}
+        style={{ textAlign: "center",paddingTop: '0rem', paddingBottom: "6rem", paddingLeft: "0" }}
       >
         <p
           style={{

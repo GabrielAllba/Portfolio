@@ -84,6 +84,9 @@
   --progress-bar-active-border: var(--first-blue);
 
   --skill-class: var(--fourth-grey);
+
+  --blog-primary: var(--third-blue);
+  --blog-secondary: var(--fourth-grey);
 }
 
 [data-theme='light'] {
@@ -130,6 +133,10 @@
   --progress-bar-active-border: var(--sixth-grey);
 
   --skill-class: var(--seventh-grey);
+
+  
+  --blog-primary: var(--fifth-black);
+  --blog-secondary: var(--third-grey);
 }
 
 
