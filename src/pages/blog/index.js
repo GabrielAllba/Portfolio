@@ -4,10 +4,21 @@ import Search from 'components/ui/Search/Search'
 import { useState } from 'react';
 import BlogItem from 'components/blogItem';
 import CustomCard from 'components/ui/CustomCard/CustomCard';
-import Layout from 'components/layout/Layout';
+import Layout from 'components/layout/Layout'
 import { ThemeProvider } from 'next-themes';
 function Blog(props){
-    const dummy = props.blogs
+    const dummy = [
+      { 
+        id: '1',
+        color: ["#FFA6D6","#A091FF"],
+        content: 'Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.',
+        description: 'Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration.',
+        publish_date: new Date('2022-01-01'),
+        tags: ['Other'],
+        title: 'Welcome message',
+        writerId: '1'
+      }
+    ]
     const [input, setInput] = useState("");
     const inputHandler = (value) => {
         setInput(value)    
@@ -20,8 +31,9 @@ function Blog(props){
 
     return (
       <ThemeProvider themes={["dark", "light"]} enableSystem={false}>
+      <Layout>
 
-      <Layout>  
+      
         <Container maxWidth="lg">
           <h2 className={classes.sub_heading}>Blog</h2>
           <div style={{ marginBottom: "2rem" }}>
@@ -49,62 +61,9 @@ function Blog(props){
             ))}
           </ul>
         </Container>
-      </Layout>
-      </ThemeProvider>
+        </Layout>
+        </ThemeProvider>
     );
 }
 
 export default Blog
-
-export async function getServerSideProps(){
-  const blog = await fetch(`http://localhost:3000/api/blog`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    
-  });
-  const results = await blog.json()
-  
-
-  const dataku = results.map((data) => ({
-    id: data.id,
-    color: data.color,
-    description: data.description,
-    publish_date: new Date(data.publish_date),
-    tags: data.tags,
-    title: data.title,
-    writerId: data.writerId,
-  }));
-
-  const options = {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
-
-  const datas = dataku.map((data) => ({
-    id: data.id,
-    color: data.color,
-    description: data.description,
-    publish_date: data.publish_date.toLocaleString("en-us", options),
-    tags: data.tags,
-    title: data.title,
-    writerId: data.writerId,
-  }));
-
-
-  return{
-    props: {
-      blogs: datas.map(data => ({
-        id: data.id,
-        color: data.color,
-        description: data.description,
-        publish_date: data.publish_date,
-        tags: data.tags,
-        title: data.title,
-        writerId: data.writerId
-      }))
-    }
-  }
-}

@@ -1,6 +1,5 @@
 import { createSlice, configureStore } from "@reduxjs/toolkit";
 
-import { createJSONToken } from "util/auth";
 
 const initialAuthState = {
     isAuthenticated: false,

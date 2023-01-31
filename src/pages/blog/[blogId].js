@@ -1,67 +1,51 @@
-import Layout from 'components/layout/Layout';
-import classes from './index.module.css'
 import { Container } from '@mui/system';
-const { PrismaClient } = require("@prisma/client");
-const prisma = new PrismaClient();
+
 import { ThemeProvider } from 'next-themes';
+import Layout from 'components/layout/Layout'
+
 function BlogDetail(props){
     return(
-        <ThemeProvider themes={["dark", "light"]} enableSystem={false}>
-
-        <Layout>
+       <ThemeProvider themes={["dark", "light"]} enableSystem={false}>
+      <Layout>
+        
             <Container maxWidth="lg">
 
             <div>
                 <p>ID : {props.blogData.title}</p>
             </div>
             </Container>
-        </Layout>
-        </ThemeProvider>
+      </Layout>
+      </ThemeProvider>
+        
     )
 }
 
-
 export async function getStaticPaths(){
-   const blogs = await prisma.blog.findMany({
-     select: {
-       id: true,
-     },
-   });
-   console.log(blogs)
-   return{
-    fallback: 'blocking',
-    paths: blogs.map((blog) => ({
-        params: {
-            blogId: blog.id
-        }
-    }))
-   }
+   
+   return {
+     fallback: "blocking",
+     paths: [{ 
+        params: { blogId: "1" } 
+    }],
+   };
 }
 export async function getStaticProps(context){
-    const blogId = context.params.blogId.toString()
-    const blog = await fetch('http://localhost:3000/api/blog/'+blogId, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-
-    const result = await blog.json()
-
     return {
-        props: {
-            blogData: {
-                id: result.id,
-                color: result.color,
-                content: result.content,
-                description: result.description,
-                publish_date: result.publish_date,
-                tags: result.tags,
-                title: result.title,
-                writerId: result.writerId,
-            }
-        }
-    }
+      props: {
+        blogData: {
+          id: "1",
+          color: ["#FFA6D6", "#A091FF"],
+          content:
+            "Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.",
+          description:
+            "Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration.",
+          publish_date: "2022-01-01",
+          tags: ["Other"],
+          title: "Welcome message",
+          writerId: "1",
+        },
+      },
+    };
 
 }
 export default BlogDetail;

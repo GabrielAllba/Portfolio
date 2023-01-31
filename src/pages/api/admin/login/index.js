@@ -3,10 +3,13 @@ var bcrypt = require("bcrypt");
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
-import { createJSONToken } from "util/auth";
 import { serialize } from "cookie";
 
+import { sign } from "jsonwebtoken";
+
 async function handler(req, res) {
+  const KEY = "supersecret"
+
   switch (req.method) {
     case "POST":
       const { email, password } = req.body;
@@ -19,7 +22,7 @@ async function handler(req, res) {
       if (admin) {
         bcrypt.compare(password, admin.password, function (err, result) {
           if (result === true) {
-            const token = createJSONToken(email)
+            const token = sign({email}, KEY, {expiresIn: '1h'})
 
             const serialised = serialize("OursiteJWT", token, {
               httpOnly: true,

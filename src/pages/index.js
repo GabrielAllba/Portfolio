@@ -6,8 +6,10 @@ import Footer from 'components/footer/Footer';
 import MobileNav from 'components/ui/MobileNav/MobileNav';
 import { useState, useEffect } from 'react';
 import Skills from 'components/home/skills';
-import Layout from 'components/layout/Layout';
-import { ThemeProvider } from "next-themes";
+
+import Layout from 'components/layout/Layout'
+import { ThemeProvider } from 'next-themes';
+
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -31,9 +33,10 @@ export default function Home() {
   });
 
   return (
-    <>
     <ThemeProvider themes={["dark", "light"]} enableSystem={false}>
       <Layout>
+
+    
         <Hero></Hero>
         <Skills></Skills>
         <Experience></Experience>
@@ -42,8 +45,9 @@ export default function Home() {
         {isMobile && <MobileNav></MobileNav>}
         <Footer></Footer>
       </Layout>
-    </ThemeProvider>
-    </>
+      </ThemeProvider>
+    
+    
   );
  
 }

@@ -1,14 +1,9 @@
 import Router from "next/router";
-
 import { useEffect, useState } from "react";
-
 import Layout from "components/layout/Layout";
-
-import Container from '@mui/material/Container'
 import Loading from "components/ui/Loading/Loading";
-
+import { ThemeProvider } from "next-themes";
 import '../styles/globals.css'
-import AdminLayout from "components/admin_layout/AdminLayout";
 
 
 function MyApp({ Component, pageProps }) {
@@ -33,16 +28,10 @@ function MyApp({ Component, pageProps }) {
     };
   }, []);
   return (
-  <AdminLayout>
-
-        {loading ? (
-          <Loading></Loading>
-          ) : (
-            <Component {...pageProps} />
-            
-            )}    
-            
-            </AdminLayout>
+    <>
+        {loading ? <Loading></Loading> : <Component {...pageProps} />}
+    </>
+    
   );
 }
 
