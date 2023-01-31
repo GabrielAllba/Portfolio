@@ -8,6 +8,7 @@ import Layout from 'components/layout/Layout'
 import { ThemeProvider } from 'next-themes';
 import MobileNav from 'components/ui/MobileNav/MobileNav'
 import Footer from 'components/footer/Footer'
+
 function Blog(props){
   const [isMobile, setIsMobile] = useState(false);
 
@@ -49,7 +50,7 @@ function Blog(props){
       if(input === "") return data
       return data.title.toLowerCase().includes(input);
       
-    });
+    })
 
     return (
       <ThemeProvider themes={["dark", "light"]} enableSystem={false}>

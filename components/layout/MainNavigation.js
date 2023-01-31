@@ -80,7 +80,7 @@ function MainNavigation() {
           <div className={classes.logo} style={{ letterSpacing: ".2rem" }}>
             <Gradient dir="left-to-right" from="#FFCC90" to="#FF9A9A">
               <Link href='/'>
-                &#60;Riel&#62;
+                Riel
               </Link>
             </Gradient>
           </div>

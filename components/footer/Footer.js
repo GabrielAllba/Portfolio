@@ -14,7 +14,7 @@ function Footer(){
           }}
         >
           <Gradient dir="left-to-right" from="#FFCC90" to="#FF9A9A">
-            &#60;Riel&#62;
+            Riel
           </Gradient>
         </p>
         <p className={classes.footer_text}>Keep learning and leveling up.</p>
@@ -47,7 +47,7 @@ function Footer(){
             </a>
            
         </div>
-        <p className={classes.footer_text}>© 2023 Gabriel Allba —— Indonesia</p>
+        <p className={classes.footer_text}>2023 Gabriel Allba —— Indonesia</p>
       </footer>
     );
 }

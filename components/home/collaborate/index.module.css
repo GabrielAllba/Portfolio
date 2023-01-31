@@ -20,6 +20,8 @@
 
 .discuss_text{
     text-decoration: none;   
+    margin-top: 1rem;
+
 }
 
 .discuss_text:hover{
