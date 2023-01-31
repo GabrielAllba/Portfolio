@@ -1,11 +1,22 @@
+import Layout from 'components/layout/Layout';
 import classes from './index.module.css'
+import { Container } from '@mui/system';
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
+import { ThemeProvider } from 'next-themes';
 function BlogDetail(props){
     return(
-        <div>
-            <p>ID : {props.blogData.title}</p>
-        </div>
+        <ThemeProvider themes={["dark", "light"]} enableSystem={false}>
+
+        <Layout>
+            <Container maxWidth="lg">
+
+            <div>
+                <p>ID : {props.blogData.title}</p>
+            </div>
+            </Container>
+        </Layout>
+        </ThemeProvider>
     )
 }
 

@@ -5,7 +5,9 @@ import Collaborate from 'components/home/collaborate';
 import Footer from 'components/footer/Footer';
 import MobileNav from 'components/ui/MobileNav/MobileNav';
 import { useState, useEffect } from 'react';
-
+import Skills from 'components/home/skills';
+import Layout from 'components/layout/Layout';
+import { ThemeProvider } from "next-themes";
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -30,13 +32,17 @@ export default function Home() {
 
   return (
     <>
-      <Hero></Hero>
-      <Experience></Experience>
-      <Works></Works>
-      <Collaborate></Collaborate>
-      {isMobile && <MobileNav></MobileNav>}
-
-      <Footer></Footer>
+    <ThemeProvider themes={["dark", "light"]} enableSystem={false}>
+      <Layout>
+        <Hero></Hero>
+        <Skills></Skills>
+        <Experience></Experience>
+        <Works></Works>
+        <Collaborate></Collaborate>
+        {isMobile && <MobileNav></MobileNav>}
+        <Footer></Footer>
+      </Layout>
+    </ThemeProvider>
     </>
   );
  

@@ -1,0 +1,17 @@
+.bar{
+    height: 2rem;
+    width: 9%;
+    border-radius: 5px;
+    margin-right: .5rem;
+    border: 1px solid var(--progress-bar-border);
+    background: var(--progress-bar-background);
+}
+.active{
+    background: var(--progress-bar-active-background);
+    border: 1px solid var(--progress-bar-active-border);
+}
+.skillclass{
+    margin: auto;
+    font-style: italic;   
+    color: var(--skill-class)
+}

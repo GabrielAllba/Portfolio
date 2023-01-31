@@ -32,6 +32,7 @@
   --fourth-grey: #92A7C9;
   --fifth-grey: #DFE5F2;
   --sixth-grey: #EBF1FF;
+  --seventh-grey: #cfd6e6;
 
   --first-white: #F9FAFB;
   
@@ -76,6 +77,13 @@
   --blog-date: var(--fourth-black);
 
   --blog-description: var(--fourth-grey);
+
+  --progress-bar-background: var(--first-grey);
+  --progress-bar-active-background: var(--first-blue);
+  --progress-bar-border: var(--first-grey);
+  --progress-bar-active-border: var(--first-blue);
+
+  --skill-class: var(--fourth-grey);
 }
 
 [data-theme='light'] {
@@ -115,6 +123,13 @@
   --blog-date: var(--second-blue);
 
   --blog-description: var(--third-grey);
+
+  --progress-bar-background: var(--first-white);
+  --progress-bar-active-background: var(--seventh-grey);
+  --progress-bar-border: var(--seventh-grey);
+  --progress-bar-active-border: var(--sixth-grey);
+
+  --skill-class: var(--seventh-grey);
 }
 
 

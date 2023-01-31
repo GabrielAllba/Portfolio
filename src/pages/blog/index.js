@@ -4,7 +4,8 @@ import Search from 'components/ui/Search/Search'
 import { useState } from 'react';
 import BlogItem from 'components/blogItem';
 import CustomCard from 'components/ui/CustomCard/CustomCard';
-
+import Layout from 'components/layout/Layout';
+import { ThemeProvider } from 'next-themes';
 function Blog(props){
     const dummy = props.blogs
     const [input, setInput] = useState("");
@@ -18,33 +19,38 @@ function Blog(props){
     });
 
     return (
-      <Container maxWidth="lg">
-        <h2 className={classes.sub_heading}>Blog</h2>
-        <div style={{ marginBottom: "2rem" }}>
-          <CustomCard>
-            <p>Here's a blog, documentation and etc!</p>
-          </CustomCard>
-        </div>
-        <Search handler={inputHandler}></Search>
-        <ul className={classes.ulitem}>
-          {filteredData.map((item) => (
-            <div className={classes.blogitem} key={item.id}>
-              <BlogItem
-                className={classes.blogitem}
-                key={item.id}
+      <ThemeProvider themes={["dark", "light"]} enableSystem={false}>
 
-                id={item.id}
-                color={item.color}
-                title={item.title}
-                content={item.content}
-                publish_date={item.publish_date}
-                tags={item.tags}
-                description={item.description}
-              ></BlogItem>
-            </div>
-          ))}
-        </ul>
-      </Container>
+      <Layout>  
+        <Container maxWidth="lg">
+          <h2 className={classes.sub_heading}>Blog</h2>
+          <div style={{ marginBottom: "2rem" }}>
+            <CustomCard>
+              <p>Here's a blog, documentation and etc!</p>
+            </CustomCard>
+          </div>
+          <Search handler={inputHandler}></Search>
+          <ul className={classes.ulitem}>
+            {filteredData.map((item) => (
+              <div className={classes.blogitem} key={item.id}>
+                <BlogItem
+                  className={classes.blogitem}
+                  key={item.id}
+                  
+                  id={item.id}
+                  color={item.color}
+                  title={item.title}
+                  content={item.content}
+                  publish_date={item.publish_date}
+                  tags={item.tags}
+                  description={item.description}
+                  ></BlogItem>
+              </div>
+            ))}
+          </ul>
+        </Container>
+      </Layout>
+      </ThemeProvider>
     );
 }
 
