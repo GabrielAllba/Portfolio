@@ -18,15 +18,32 @@ import Alert from "@mui/material/Alert";
 import classes from './index.module.css'
 import { Card } from "@mui/material";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { authActions } from "store";
-
+import { useEffect } from "react";
+import { getAuthToken } from "util/auth";
+import { useRouter } from "next/router";
 
 export default function SignIn() {
+  const auth = useSelector((state) => state.auth.isAuthenticated);
+
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [response, setResponse] = useState(null)
   const dispatch = useDispatch()
+  
+  const router = useRouter()
 
+  useEffect(() => {
+        var token_item = localStorage.getItem("token");
+        var expiration_item = localStorage.getItem("expiration");
+
+        console.log(token_item);
+        console.log(expiration_item);
+    
+  }, []);
+
+  
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formdata = new FormData(event.currentTarget);
@@ -42,17 +59,20 @@ export default function SignIn() {
     const result = await fetch("/api/admin/login", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
       body: JSON.stringify(data),
     });
-    const res = await result.json()
-    console.log(res.admin.email)
-    if(res.status===200){
-      const results = dispatch(authActions.login(res.admin.email))
-      console.log(results)
 
+
+    const res = await result.json()
+    console.log(res)
+
+    if(res.status===200){
+      router.push('/admin/home')
     }
+    
+    
 
     setResponse(res)
 

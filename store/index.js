@@ -4,7 +4,6 @@ import { createJSONToken } from "util/auth";
 
 const initialAuthState = {
     isAuthenticated: false,
-    token: ''
 }
 
 const authSlice = createSlice({
@@ -12,14 +11,7 @@ const authSlice = createSlice({
     initialState: initialAuthState,
     reducers: {
         login(state, action){
-            const email = action.payload.email
-            const token = createJSONToken(email)
             state.isAuthenticated = true
-
-            return {
-                token: token
-            }
-
         },
         logout(state){
             state.isAuthenticated = false
