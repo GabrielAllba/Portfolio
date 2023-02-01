@@ -143,7 +143,7 @@ function MainNavigation() {
             )}
           </nav>
         </Container>
-        <div className={scrollY <= 100 ? '' : classes.blured_background}></div>
+        <div className={scrollY <= 100 ? classes.usual_background : classes.blured_background}></div>
       </header>
     );
 }
