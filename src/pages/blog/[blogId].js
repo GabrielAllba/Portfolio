@@ -16,6 +16,7 @@ import Collaborate from 'components/home/collaborate'
 import { useRef } from 'react';
 
 import { useHeadsObserver } from '../../hooks';
+import MobileNav from "components/ui/MobileNav/MobileNav";
 
 function BlogDetail(props){
    const [mounted, setMounted] = useState(false);
@@ -241,6 +242,7 @@ function BlogDetail(props){
               {/* END SIDEBAR DESKTOP */}
             </div>
             <Collaborate></Collaborate>
+            {isMobile && <MobileNav></MobileNav>}
             <Footer></Footer>
           </Container>
         </Layout>

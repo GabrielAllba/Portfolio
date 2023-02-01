@@ -14,7 +14,7 @@ function MobileNav(props){
           <NavItem link='/' name='Experience'></NavItem>
           <NavItem link='/' name='Work'></NavItem>
           <NavItem link='/' name='Awards'></NavItem>
-          <NavItem link='/' name='Blog'></NavItem>
+          <NavItem link='/blog' name='Blog'></NavItem>
         </div>
       </Container>
     );
