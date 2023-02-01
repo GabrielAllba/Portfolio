@@ -85,9 +85,13 @@ function BlogDetail(props){
                     {props.blogData.subContent.map((sub, index) => {
                       return (
                         <div key={sub}>
-                          <h1 className={classes.title}>{sub}</h1>
-                          <p className={classes.main_text}>
-                            {props.blogData.content[index] ? parse(props.blogData.content[index]) : ''}
+                          <h1 key={sub} className={classes.title}>
+                            {sub}
+                          </h1>
+                          <p className={classes.main_text} key={sub}>
+                            {props.blogData.content[index]
+                              ? parse(props.blogData.content[index])
+                              : ""}
                           </p>
                         </div>
                       );
@@ -102,8 +106,10 @@ function BlogDetail(props){
                     {props.blogData.subContent.map((sub, index) => {
                       return (
                         <div key={sub}>
-                          <h1 className={classes.title}>{sub}</h1>
-                          <p className={classes.main_text}>
+                          <h1 key={sub} className={classes.title}>
+                            {sub}
+                          </h1>
+                          <p key={sub} className={classes.main_text}>
                             {props.blogData.content[index]
                               ? parse(props.blogData.content[index])
                               : ""}
@@ -125,7 +131,7 @@ function BlogDetail(props){
                     {props.blogData.subContent.map((sub, index) => {
                       return (
                         <div key={sub}>
-                          <p className={classes.main_text}>
+                          <p key={sub} className={classes.main_text}>
                             {sub}
                           </p>
                         </div>
