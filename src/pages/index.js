@@ -35,8 +35,6 @@ export default function Home() {
   return (
     <ThemeProvider themes={["dark", "light"]} enableSystem={false}>
       <Layout>
-
-    
         <Hero></Hero>
         <Skills></Skills>
         <Experience></Experience>
