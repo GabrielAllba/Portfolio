@@ -20,28 +20,69 @@ import { useHeadsObserver } from '../../hooks';
 function BlogDetail(props){
    const [mounted, setMounted] = useState(false);
    const [isMobile, setIsMobile] = useState(false);
-   const [headings, setHeadings] = useState([]);
-   const [activeId, setActiveId] = useState('')
+   const containerRef = useRef(null)
+   const [scrollPosition, setScrollPosition] = useState(0)
+   const [activeIntersection, setActiveIntersection] = useState('')
    
-   useEffect(() => {
-      const elements = Array.from(document.querySelectorAll(".table_of_content")
-      ).map((elem, index) => ({
-        id: `anchor_${index}`,
-        text: elem.innerText,
-        level: Number(elem.nodeName.charAt(1)),
-      }));
-      
-      setHeadings(elements);
-    }, [mounted]);
 
 
-    
-  
 
    useEffect(() => {
      setMounted(true);
    }, []);
+
+   const handleScroll = () => {
+     const scrollPosition = window.scrollY; 
+     setScrollPosition(scrollPosition)
+   };
+
+   useEffect(() => {
+     handleScroll();
+     window.addEventListener("scroll", handleScroll);
+     return () => {
+       window.removeEventListener("scroll", handleScroll);
+     };
+   }, []);
+
    
+
+   
+
+   useEffect(() => {
+    let callback = (entries, observer) => {
+      for(let i=0; i<entries.length; i++){
+        if(entries[i].isIntersecting){
+          setActiveIntersection(`table_of_content_id_${entries[i].target.id}`);
+          break;
+        }
+        console.log(activeIntersection)
+      }
+    };
+
+    let options = {
+      root: document.querySelector(".main"),
+      rootMargin: "0px",
+      threshold: 1,
+    };
+    
+    const arr = props.blogData.subContent.map((sub, index) => {
+      return '#anchor_'+index
+    })   
+    const observer = new IntersectionObserver(callback, options);  
+    const target = arr.map((ar) => {
+      return document.querySelector(ar)
+    })
+    console.log(target)
+
+    if(target[0]!==null){
+      const test = target.map((tar) => {
+        return observer.observe(tar)
+      })
+    }
+     
+    
+   }, [scrollPosition])
+  
     
     
 
@@ -71,13 +112,15 @@ function BlogDetail(props){
    }
 
 
+
+   
    
   
     return (
       <ThemeProvider themes={["dark", "light"]} enableSystem={false}>
         <Layout>
           <Container maxWidth="lg" style={{ position: "relative" }}>
-            <Card sx={{ maxWidth: "lg" }}>
+            <Card ref={containerRef} sx={{ maxWidth: "lg" }}>
               <CardMedia
                 component="img"
                 alt="green iguana"
@@ -112,8 +155,12 @@ function BlogDetail(props){
                   <div className={classes.real_content}>
                     {props.blogData.subContent.map((sub, index) => {
                       return (
-                        <div className={classes.boxRef} key={`anchor_${index}`} id={`anchor_${index}`}>
-                          <h2 key={sub.id} className={classes.title}>
+                        <div
+                          className={classes.boxRef}
+                          key={`desktop_content_${sub.id}`}
+                          id={`anchor_${index}`}
+                        >
+                          <h2 className={classes.title}>
                             {sub.name}
                           </h2>
                           <p className={classes.main_text} key={sub.id}>
@@ -135,13 +182,13 @@ function BlogDetail(props){
                       return (
                         <div
                           className={classes.boxRef}
-                          key={`anchor_${index}`}
+                          key={`mobile_content_${sub.id}`}
                           id={`anchor_${index}`}
                         >
-                          <h2 key={sub.id} className={classes.title}>
+                          <h2 className={classes.title}>
                             {sub.name}
                           </h2>
-                          <p className={classes.main_text} key={sub.id}>
+                          <p className={classes.main_text}>
                             {props.blogData.content[index]
                               ? parse(props.blogData.content[index].name)
                               : ""}
@@ -162,18 +209,26 @@ function BlogDetail(props){
                   <div className={classes.sticky_table_content}>
                     {props.blogData.subContent.map((sub, index) => {
                       return (
-                        <div key={headings.text}>
-                          
+                        <div key={`sidebar_${sub.id}`}>
                           <p
-                            key={sub.id}
-                            className={activeId === `#anchor_${index}` ? classes.activeid : classes.main_text}
-
+                            id={`table_of_content_id_anchor_${index}`}
+                            className={
+                              activeIntersection ===
+                                  `table_of_content_id_anchor_${index}`
+                                ? classes.activeid
+                                : classes.main_text
+                                    
+                            }
                             onClick={(e) => {
                               e.preventDefault();
+
                               document.querySelector(`#anchor_${index}`).scrollIntoView({ behavior: "smooth" });
-                              setActiveId(`#anchor_${index}`)
+                              setActiveIntersection(
+                                `table_of_content_id_anchor_${index}`
+                                
+                              );
                             }}
-                            >
+                          >
                             {sub.name}
                           </p>
                         </div>
@@ -206,7 +261,7 @@ export async function getStaticProps(context){
     return {
       props: {
         blogData: {
-          id: "1",
+          id: "sdfasdfadsf",
           color: ["#FFA6D6", "#A091FF"],
           description:
             "Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration.",
@@ -214,31 +269,31 @@ export async function getStaticProps(context){
           tags: ["Other"],
           subContent: [
             {
-              id: "1",
+              id: "adf",
               name: "Bending light with refraction",
             },
             {
-              id: "2",
+              id: "2ghdf",
               name: "Chromatic Dispersion",
             },
             {
-              id: "3",
+              id: "fdgasdf",
               name: "Saturating and expanding",
             },
             {
-              id: "4",
+              id: "fdshsd",
               name: "Adding volume and shininess",
             },
             {
-              id: "5",
+              id: "bfdhds",
               name: "Bending",
             },
             {
-              id: "6",
+              id: "hfgdfg",
               name: "Conclusion",
             },
             {
-              id: "7",
+              id: "54tdgfsa",
               name: "Conclusion",
             },
           ],
@@ -285,7 +340,7 @@ export async function getStaticProps(context){
             },
           ],
           title: "Welcome message",
-          writerId: "1",
+          writerId: "kfj92u3r0",
         },
       },
     };
