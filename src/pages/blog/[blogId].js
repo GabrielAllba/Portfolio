@@ -13,14 +13,37 @@ import Badge from '../../../components/ui/Badge/Badge';
 import parse from "html-react-parser";
 import Footer from 'components/footer/Footer'
 import Collaborate from 'components/home/collaborate'
+import { useRef } from 'react';
+
+import { useHeadsObserver } from '../../hooks';
 
 function BlogDetail(props){
    const [mounted, setMounted] = useState(false);
    const [isMobile, setIsMobile] = useState(false);
+   const [headings, setHeadings] = useState([]);
+   const [activeId, setActiveId] = useState('')
+   
+   useEffect(() => {
+      const elements = Array.from(document.querySelectorAll(".table_of_content")
+      ).map((elem, index) => ({
+        id: `anchor_${index}`,
+        text: elem.innerText,
+        level: Number(elem.nodeName.charAt(1)),
+      }));
+      
+      setHeadings(elements);
+    }, [mounted]);
+
+
+    
+  
 
    useEffect(() => {
      setMounted(true);
    }, []);
+   
+    
+    
 
    const handleResize = () => {
      if (window.innerWidth < 768) {
@@ -33,16 +56,21 @@ function BlogDetail(props){
    useEffect(() => {
      window.addEventListener("resize", handleResize);
 
+
      if (window.innerWidth < 768) {
        setIsMobile(true);
      } else {
        setIsMobile(false);
      }
    });
+   
+   
 
    if(!mounted){
     return null
    }
+
+
    
   
     return (
@@ -84,10 +112,10 @@ function BlogDetail(props){
                   <div className={classes.real_content}>
                     {props.blogData.subContent.map((sub, index) => {
                       return (
-                        <div key={sub.id}>
-                          <h1 key={sub.id} className={classes.title}>
+                        <div className={classes.boxRef} key={`anchor_${index}`} id={`anchor_${index}`}>
+                          <h2 key={sub.id} className={classes.title}>
                             {sub.name}
-                          </h1>
+                          </h2>
                           <p className={classes.main_text} key={sub.id}>
                             {props.blogData.content[index]
                               ? parse(props.blogData.content[index].name)
@@ -105,10 +133,14 @@ function BlogDetail(props){
                   <div className={classes.real_content}>
                     {props.blogData.subContent.map((sub, index) => {
                       return (
-                        <div key={sub.id}>
-                          <h1 key={sub.id} className={classes.title}>
+                        <div
+                          className={classes.boxRef}
+                          key={`anchor_${index}`}
+                          id={`anchor_${index}`}
+                        >
+                          <h2 key={sub.id} className={classes.title}>
                             {sub.name}
-                          </h1>
+                          </h2>
                           <p className={classes.main_text} key={sub.id}>
                             {props.blogData.content[index]
                               ? parse(props.blogData.content[index].name)
@@ -130,8 +162,18 @@ function BlogDetail(props){
                   <div className={classes.sticky_table_content}>
                     {props.blogData.subContent.map((sub, index) => {
                       return (
-                        <div key={sub.id}>
-                          <p key={sub.id} className={classes.main_text}>
+                        <div key={headings.text}>
+                          
+                          <p
+                            key={sub.id}
+                            className={activeId === `#anchor_${index}` ? classes.activeid : classes.main_text}
+
+                            onClick={(e) => {
+                              e.preventDefault();
+                              document.querySelector(`#anchor_${index}`).scrollIntoView({ behavior: "smooth" });
+                              setActiveId(`#anchor_${index}`)
+                            }}
+                            >
                             {sub.name}
                           </p>
                         </div>
@@ -193,6 +235,10 @@ export async function getStaticProps(context){
             },
             {
               id: "6",
+              name: "Conclusion",
+            },
+            {
+              id: "7",
               name: "Conclusion",
             },
           ],

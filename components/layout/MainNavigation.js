@@ -56,7 +56,7 @@ function MainNavigation() {
         window.addEventListener("scroll", logit);
       }
       watchScroll();
-      console.log(scrollY)
+      
       return () => {
         window.removeEventListener("scroll", logit);
       };
@@ -71,7 +71,7 @@ function MainNavigation() {
         const newTheme = theme === 'dark' ? 'light' : 'dark'
         setTheme(newTheme);
     }
-    console.log(scrollY)
+    
     
 
     return (
