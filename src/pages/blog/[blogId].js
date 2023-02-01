@@ -107,9 +107,9 @@ function BlogDetail(props){
                       return (
                         <div key={sub.id}>
                           <h1 key={sub.id} className={classes.title}>
-                            {sub}
+                            {sub.name}
                           </h1>
-                          <p key={sub.id} className={classes.main_text}>
+                          <p className={classes.main_text} key={sub.id}>
                             {props.blogData.content[index]
                               ? parse(props.blogData.content[index].name)
                               : ""}
@@ -146,7 +146,6 @@ function BlogDetail(props){
             <Collaborate></Collaborate>
             <Footer></Footer>
           </Container>
-
         </Layout>
       </ThemeProvider>
     );
