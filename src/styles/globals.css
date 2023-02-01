@@ -13,6 +13,7 @@
   --third-blue: #CCE0FF;
   --fourth-blue: #5483F0;
   --fifth-blue: #DAE8FF;
+  --sixth-blue: #E8E8FD;
 
   --first-pink: #EB7EA0;
   --second-pink: #F39DAC;
@@ -33,6 +34,7 @@
   --fifth-grey: #DFE5F2;
   --sixth-grey: #EBF1FF;
   --seventh-grey: #cfd6e6;
+  --eight-grey: #969da9;
 
   --first-white: #F9FAFB;
   
@@ -85,8 +87,8 @@
 
   --skill-class: var(--fourth-grey);
 
-  --blog-primary: var(--third-blue);
-  --blog-secondary: var(--fourth-grey);
+  --blog-primary: var(--sixth-blue);
+  --blog-secondary: var(--eight-grey);
 }
 
 [data-theme='light'] {

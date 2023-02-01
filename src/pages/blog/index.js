@@ -31,17 +31,24 @@ function Blog(props){
   });
 
     const dummy = [
-      { 
-        id: '1',
-        color: ["#FFA6D6","#A091FF"],
-        content: 'Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.',
-        description: 'Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration.',
-        publish_date: new Date('2022-01-01'),
-        tags: ['Other'],
-        title: 'Welcome message',
-        writerId: '1'
-      }
-    ]
+      {
+        id: "1",
+        color: ["#FFA6D6", "#A091FF"],
+        description:
+          "Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration.",
+        publish_date: new Date("2022-01-01"),
+        tags: ["Other"],
+        subContent: ["Part 1", "Part 2", "Part 3"],
+        content:
+          [
+            `Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.`,
+            "Description Part 2",
+            "Description Part 3",
+          ],
+        title: "Welcome message",
+        writerId: "1",
+      },
+    ];
     const [input, setInput] = useState("");
     const inputHandler = (value) => {
         setInput(value)    
@@ -73,6 +80,7 @@ function Blog(props){
                     color={item.color}
                     title={item.title}
                     content={item.content}
+                    subContent={item.subContent}
                     publish_date={item.publish_date}
                     tags={item.tags}
                     description={item.description}

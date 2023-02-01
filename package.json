@@ -23,6 +23,7 @@
     "eslint-config-next": "13.1.6",
     "express": "^4.18.2",
     "framer-motion": "^8.5.4",
+    "html-react-parser": "^3.0.8",
     "mongodb": "^4.13.0",
     "next": "^13.1.6",
     "next-auth": "^4.19.0",

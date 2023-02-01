@@ -9,6 +9,10 @@ import CardMedia from "@mui/material/CardMedia";
 import CustomCard  from 'components/ui/CustomCard/CustomCard';
 import classes from './blogdetail.module.css'
 import { useState, useEffect } from 'react';
+import Badge from '../../../components/ui/Badge/Badge';
+import parse from "html-react-parser";
+import Footer from 'components/footer/Footer'
+import Collaborate from 'components/home/collaborate'
 
 function BlogDetail(props){
    const [mounted, setMounted] = useState(false);
@@ -58,55 +62,85 @@ function BlogDetail(props){
               <div className={classes.badge_container}>
                 <CustomCard>
                   <h1 className={classes.title}>{props.blogData.title}</h1>
-                  <p className={classes.main_text}>
-                    Written on {props.blogData.publish_date} by{" "}
+                  <p
+                    className={classes.main_text}
+                    style={{ marginBottom: ".5rem" }}
+                  >
+                    Written on {props.blogData.publish_date}
                     {props.blogData.writerId}
                   </p>
+                  <div style={{ display: "flex", margin: "0" }}>
+                    <Badge>Lasst updated January 30, 2023</Badge>
+                  </div>
                 </CustomCard>
               </div>
             </div>
+
             <div className={classes.content_container}>
+              {/* START CONTENT */}
 
               {!isMobile && (
                 <div className={classes.content}>
-                  <CustomCard>
-                    <div className={classes.real_content}>
-                      <h1 className={classes.title}>{props.blogData.title}</h1>
-                      <p className={classes.main_text}>
-                        Written on {props.blogData.publish_date} by{" "}
-                        {props.blogData.writerId}
-                      </p>
-                    </div>
-                  </CustomCard>
+                  <div className={classes.real_content}>
+                    {props.blogData.subContent.map((sub, index) => {
+                      return (
+                        <div>
+                          <h1 className={classes.title}>{sub}</h1>
+                          <p className={classes.main_text}>
+                            {props.blogData.content[index] ? parse(props.blogData.content[index]) : ''}
+                          </p>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               )}
+
               {isMobile && (
                 <div className={classes.width_100}>
-                  <CustomCard>
-                    <div className={classes.real_content}>
-                      <h1 className={classes.title}>{props.blogData.title}</h1>
-                      <p className={classes.main_text}>
-                        Written on {props.blogData.publish_date} by{" "}
-                        {props.blogData.writerId}
-                      </p>
-                    </div>
-                  </CustomCard>
+                  <div className={classes.real_content}>
+                    {props.blogData.subContent.map((sub, index) => {
+                      return (
+                        <div>
+                          <h1 className={classes.title}>{sub}</h1>
+                          <p className={classes.main_text}>
+                            {props.blogData.content[index]
+                              ? parse(props.blogData.content[index])
+                              : ""}
+                          </p>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               )}
+
+              {/* END CONTENT*/}
+
+              {/* START SIDEBAR DESKTOP */}
 
               {!isMobile && (
                 <div className={classes.table_content}>
                   <div className={classes.sticky_table_content}>
-                    <h1 className={classes.title}>{props.blogData.title}</h1>
-                    <p className={classes.main_text}>
-                      Written on {props.blogData.publish_date} by{" "}
-                      {props.blogData.writerId}
-                    </p>
+                    {props.blogData.subContent.map((sub, index) => {
+                      return (
+                        <div>
+                          <p className={classes.main_text}>
+                            {sub}
+                          </p>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               )}
+
+              {/* END SIDEBAR DESKTOP */}
             </div>
+            <Collaborate></Collaborate>
+            <Footer></Footer>
           </Container>
+
         </Layout>
       </ThemeProvider>
     );
@@ -127,12 +161,40 @@ export async function getStaticProps(context){
         blogData: {
           id: "1",
           color: ["#FFA6D6", "#A091FF"],
-          content:
-            "Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.",
           description:
             "Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration.",
           publish_date: "2022-01-01",
           tags: ["Other"],
+          subContent: [
+            "Bending light with refraction",
+            "Chromatic Dispersion",
+            "Saturating and expanding",
+            "Adding volume and shininess",
+            "Bending",
+            "Conclusion",
+          ],
+          content: [
+            `Vercel is the platform for frontend developers, providing the speed and 
+            reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice. <br><br>
+            Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.
+            <br><br>
+            Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.`,
+            `Vercel is the platform for frontend developers, providing the speed and 
+            reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice. <br><br>
+            Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.
+            <br><br>
+            Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.`,
+            `Vercel is the platform for frontend developers, providing the speed and 
+            reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice. <br><br>
+            Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.
+            <br><br><pre>This is code</pre>
+            Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.`,
+            `Vercel is the platform for frontend developers, providing the speed and 
+            reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice. <br><br>
+            Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.
+            <br><br>
+            Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.`,
+          ],
           title: "Welcome message",
           writerId: "1",
         },

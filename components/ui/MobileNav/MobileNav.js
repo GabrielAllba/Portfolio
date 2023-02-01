@@ -3,6 +3,7 @@ import classes from './MobileNav.module.css'
 import { HiOutlineHome } from "react-icons/hi";
 import Badge from '../Badge/Badge';
 import NavItem from './NavItem';
+
 function MobileNav(props){
     return (
       <Container maxWidth="sm" style={{position: 'relative'}}>
