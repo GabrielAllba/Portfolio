@@ -84,7 +84,7 @@ function BlogDetail(props){
                   <div className={classes.real_content}>
                     {props.blogData.subContent.map((sub, index) => {
                       return (
-                        <div>
+                        <div key={sub}>
                           <h1 className={classes.title}>{sub}</h1>
                           <p className={classes.main_text}>
                             {props.blogData.content[index] ? parse(props.blogData.content[index]) : ''}
@@ -101,7 +101,7 @@ function BlogDetail(props){
                   <div className={classes.real_content}>
                     {props.blogData.subContent.map((sub, index) => {
                       return (
-                        <div>
+                        <div key={sub}>
                           <h1 className={classes.title}>{sub}</h1>
                           <p className={classes.main_text}>
                             {props.blogData.content[index]
@@ -124,7 +124,7 @@ function BlogDetail(props){
                   <div className={classes.sticky_table_content}>
                     {props.blogData.subContent.map((sub, index) => {
                       return (
-                        <div>
+                        <div key={sub}>
                           <p className={classes.main_text}>
                             {sub}
                           </p>
