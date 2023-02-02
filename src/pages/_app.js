@@ -13,8 +13,9 @@ function MyApp({ Component, pageProps }) {
       setLoading(true);
     };
     const end = () => {
-      
+      setTimeout(() => {
         setLoading(false);
+      }, 1000)
       
     };
     Router.events.on("routeChangeStart", start);
@@ -29,8 +30,7 @@ function MyApp({ Component, pageProps }) {
   }, []);
   return (
     <>
-        {/* {loading ? <Loading></Loading> : <Component {...pageProps} />} */}
-        <Component {...pageProps}></Component>
+        {loading ? <Loading></Loading> : <Component {...pageProps} />}
     </>
     
   );
