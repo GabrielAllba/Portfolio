@@ -29,7 +29,8 @@ function MyApp({ Component, pageProps }) {
   }, []);
   return (
     <>
-        {loading ? <Loading></Loading> : <Component {...pageProps} />}
+        {/* {loading ? <Loading></Loading> : <Component {...pageProps} />} */}
+        <Component {...pageProps}></Component>
     </>
     
   );

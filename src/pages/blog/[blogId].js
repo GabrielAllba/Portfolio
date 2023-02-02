@@ -263,6 +263,7 @@ export async function getStaticProps(context){
     return {
       props: {
         blogData: {
+          
           id: "sdfasdfadsf",
           color: ["#FFA6D6", "#A091FF"],
           description:
