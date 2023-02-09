@@ -45,11 +45,12 @@ function AwardItem(props){
             {props.tools.map((tool) => {
               return (
                 <div
-                  style={{
+                key={tool}
+                style={{
                     display: "flex",
                     marginRight: ".5rem",
                     marginTop: ".5rem",
-                  }}
+                }}
                 >
                   <Badge>{tool}</Badge>
                 </div>
