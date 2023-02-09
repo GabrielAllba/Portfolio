@@ -30,13 +30,12 @@
 }
 .badge_container{
     display: flex;
+    flex-wrap: wrap;
 }
 .nomargin{
         margin: .5rem 0;
     }
-.badge_container{
-    margin-top: .5rem;
-}
+
 
 .desc_container{
     margin: .5rem 0;

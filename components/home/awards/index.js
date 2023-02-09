@@ -10,7 +10,7 @@ const DUMMY_DATA = [
     image: "/img/certificate/fewdc_berkahjaya.png",
     description:
       "A website for  visualizing NFT data from various artists. It just a frontend without backend technology, there is no such abilty for doing create, read, update, delete and other requests.",
-    tools: ["HTML", "CSS", "Javascript"],
+    tools: ["HTML ", "CSS", "Javascript", "Moralis API", "Node JS", "Express JS"],
   },
   {
     id: "kjoiunnk",
@@ -19,7 +19,7 @@ const DUMMY_DATA = [
     image: "/img/certificate/pnc.png",
     description:
       "Successfully solved some algorithmic problem that was given by KSP UAJY using C programming Language.Before went to the final stage, KSP UAJY also sent 4 challenges (1 challenge every week) that must be solved by the participant. The final stage only took 2 hours for participant to solved the problem while the challenges took 1 day.",
-    tools: ["HTML", "CSS", "Javascript"],
+    tools: ["C", "Teamwork"],
   },
 ];
 

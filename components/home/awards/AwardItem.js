@@ -33,7 +33,7 @@ function AwardItem(props){
           <div className={classes.badge_container}>
             {props.tools.map((tool) => {
               return (
-                <div style={{ display: "flex", marginRight: ".5rem" }}>
+                <div style={{ display: "flex", marginRight: ".5rem", marginTop: '.5rem' }}>
                   <Badge>{tool}</Badge>
                 </div>
               );
