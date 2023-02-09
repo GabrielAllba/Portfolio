@@ -25,6 +25,7 @@ function WorkItem(props){
               className={classes.image_content}
               src={props.image}
               width={700}
+              alt="image"
               height={700}
               quality="100"
             ></Image>

@@ -17,7 +17,6 @@ function Hero(){
               height: "100%",
               width: "100%",
               display: "inline-block",
-              
             }}
             style={{
               display: "flex",
@@ -28,11 +27,11 @@ function Hero(){
           >
             <div className={classes.avatar_container}>
               <Image
-                
                 className={classes.avatar}
-                src='/img/avatar.png'
+                src="/img/avatar.png"
                 width={150}
                 height={150}
+                alt="image"
                 quality={100}
               ></Image>
             </div>

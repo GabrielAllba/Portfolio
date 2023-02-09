@@ -26,6 +26,7 @@ function AwardItem(props){
               src={props.image}
               width={300}
               height={300}
+              alt="image"
               quality="100"
             ></Image>
           </ReactGradient>
