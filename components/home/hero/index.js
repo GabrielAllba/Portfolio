@@ -8,7 +8,7 @@ import { Container } from "@mui/material";
 import Link from 'next/link'
 function Hero(){
     return (
-      <Container maxWidth='lg'>
+      <Container maxWidth="lg">
         <Box sx={{ height: "42rem", width: "100%" }}>
           <Box
             sx={{
@@ -23,6 +23,12 @@ function Hero(){
               alignItems: "center",
             }}
           >
+            <div className={classes.avatar_container}>
+              <img
+                className={classes.avatar}
+                src='/img/avatar.png'
+              ></img>
+            </div>
             <h1 className={classes.title}>
               <Gradient dir="left-to-right" from="#6D9EE7" to="#86ABE5">
                 Full Stack{" "}
@@ -41,10 +47,10 @@ function Hero(){
               <Link href="/" target="_blank">
                 <Badge>LinkedIn</Badge>
               </Link>
-              <Link href='/'>
+              <Link href="/">
                 <Badge>GitHub</Badge>
               </Link>
-              <Link href='/'>
+              <Link href="/">
                 <Badge>CV</Badge>
               </Link>
             </div>
