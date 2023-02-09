@@ -1,0 +1,84 @@
+.award_container{
+    display: flex;
+}
+
+.award_item{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.image_container{
+    width: 50%;
+    background: red;
+    margin: 1rem 0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+}
+
+.image{
+    width: 100%;
+}
+.award_description{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    flex-direction: column;   
+}
+.badge_container{
+    display: flex;
+}
+.nomargin{
+        margin: .5rem 0;
+    }
+.badge_container{
+    margin-top: .5rem;
+}
+
+.desc_container{
+    margin: .5rem 0;
+    border-radius: 5px;
+    padding: 1rem;
+    background: var(--button-background);
+}
+
+.information{
+    color: var(--information-awards-color);
+}
+
+.title{
+    color: var(--title-awards-color);
+    
+}
+
+.description_detail{
+    color: var(--description-awards-color);
+
+}
+
+
+
+@media screen and (max-width :768px) {
+    .award_container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .image_container{
+        width: 100%;
+    }
+    .award_item{
+        width: 100%;
+    }
+    .award_description{
+        width: 100%;
+        
+        justify-content: center;
+        
+        margin-bottom: 2rem;
+    }
+    
+    
+}

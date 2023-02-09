@@ -26,6 +26,7 @@
   --third-black: #23272F;
   --fourth-black: #44464D;
   --fifth-black: #34363E;
+  --sixth-black: #34363E;
 
   --first-grey: #1D2333;
   --second-grey: #485062;
@@ -35,6 +36,7 @@
   --sixth-grey: #EBF1FF;
   --seventh-grey: #cfd6e6;
   --eight-grey: #969da9;
+  --ninth-grey: #7582A6;
 
   --first-white: #F9FAFB;
   
@@ -89,6 +91,10 @@
 
   --blog-primary: var(--sixth-blue);
   --blog-secondary: var(--eight-grey);
+
+  --information-awards-color: var(--ninth-grey);
+  --title-awards-color: var(--third-blue);
+  --description-awards-color: var(--fourth-grey);
 }
 
 [data-theme='light'] {
@@ -139,6 +145,10 @@
   
   --blog-primary: var(--fifth-black);
   --blog-secondary: var(--third-grey);
+
+  --information-awards-color: var(--third-grey);
+  --title-awards-color: var(--sixth-black);
+  --description-awards-color: var(--third-grey);
 }
 
 

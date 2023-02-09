@@ -9,6 +9,7 @@ import Skills from 'components/home/skills';
 
 import Layout from 'components/layout/Layout'
 import { ThemeProvider } from 'next-themes';
+import Awards from '../../components/home/awards';
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
@@ -39,8 +40,9 @@ export default function Home() {
         <Skills></Skills>
         <Experience></Experience>
         <Works></Works>
-        <Collaborate></Collaborate>
         {isMobile && <MobileNav></MobileNav>}
+        <Awards></Awards>
+        <Collaborate></Collaborate>
         <Footer></Footer>
       </Layout>
       </ThemeProvider>
