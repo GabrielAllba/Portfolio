@@ -21,11 +21,12 @@
 .discuss_text{
     text-decoration: none;   
     margin-top: 1rem;
-
+    cursor: pointer;
 }
 
 .discuss_text:hover{
-      transition: .2s ease;
+    transition: .2s ease;
     box-shadow: var(--badge-text) 0px 7px 29px 0px;
     box-shadow: var(--badge-text) 0px 0px 59px 0px;
+    border-radius: 10px;
 }
