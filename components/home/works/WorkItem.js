@@ -1,6 +1,7 @@
 import classes from './WorkItem.module.css'
 import {Gradient} from 'react-gradient'
 import Link from 'next/link'
+import Image from 'next/image'
 function WorkItem(props){
     
     const gradients = [
@@ -20,11 +21,13 @@ function WorkItem(props){
             angle="60deg"
             className={classes.image_container}
           >
-            <img
+            <Image
               className={classes.image_content}
               src={props.image}
-              style={{width: '100%'}}
-            ></img>
+              width={700}
+              height={700}
+              quality="100"
+            ></Image>
           </Gradient>
         </Link>
       </div>

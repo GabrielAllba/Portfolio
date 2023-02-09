@@ -13,6 +13,7 @@ import { FiSun } from "react-icons/fi";
 import { AiOutlineMenu } from "react-icons/ai";
 import { Container } from "@mui/system";
 
+import Image from 'next/image'
 
 function MainNavigation() {
      const [mounted, setMounted] = useState(false);

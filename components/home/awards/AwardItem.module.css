@@ -20,7 +20,8 @@
 }
 
 .image{
-    width: 100%;
+    width: 100% !important;
+    height: auto !important;
 }
 .award_description{
     display: flex;

@@ -5,8 +5,10 @@ import classes from './index.module.css'
 import Badge from "components/ui/Badge/Badge";
 import {BsArrowUpRight} from 'react-icons/bs'
 import { Container } from "@mui/material";
+import Image from "next/image";
 import Link from 'next/link'
 function Hero(){
+
     return (
       <Container maxWidth="lg">
         <Box sx={{ height: "42rem", width: "100%" }}>
@@ -15,6 +17,7 @@ function Hero(){
               height: "100%",
               width: "100%",
               display: "inline-block",
+              
             }}
             style={{
               display: "flex",
@@ -24,10 +27,14 @@ function Hero(){
             }}
           >
             <div className={classes.avatar_container}>
-              <img
+              <Image
+                
                 className={classes.avatar}
                 src='/img/avatar.png'
-              ></img>
+                width={150}
+                height={150}
+                quality={100}
+              ></Image>
             </div>
             <h1 className={classes.title}>
               <Gradient dir="left-to-right" from="#6D9EE7" to="#86ABE5">
