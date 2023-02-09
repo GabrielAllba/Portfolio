@@ -29,10 +29,10 @@ function Hero(){
               <Image
                 className={classes.avatar}
                 src="/img/avatar.png"
-                width={150}
-                height={150}
+                width={1000}
+                height={1000}
                 alt="image"
-                quality={100}
+                quality="100"
               ></Image>
             </div>
             <h1 className={classes.title}>
