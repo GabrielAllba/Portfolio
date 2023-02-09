@@ -55,5 +55,7 @@
     padding-bottom: 0;
     bottom: 0;
     left: 50%;
+    width: auto !important;
+    height: auto !important;
     transform: translateX(-50%);
 }
