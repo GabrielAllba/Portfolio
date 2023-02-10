@@ -37,9 +37,15 @@ export default function Home() {
   return (
     <ThemeProvider themes={["dark", "light"]} enableSystem={false}>
       <Head>
-        <title>Gabriel Allba</title>
+        <title>Gabriel Allba Shemi Yuma</title>
         <link rel="shortcut icon" href="/img/logo_profile.png" />
-        <meta property="og:title" content="Gabriel Allba" key="title"></meta>
+        <meta property="og:title" content="Gabriel Allba Shemi Yuma" key="title" />
+        <meta name="title" content="Gabriel Allba Shemi Yuma" />
+        <meta name="description" content="Full Stack Web Developer & DevOps Enthusiasts" />
+        <meta name="keywords" content="Gabriel Allba, Web Developer, Portfolio, Devops Students, Atma Jaya Yogyakarta, Informatics" />
+        <meta name="robots" content="index, follow" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="English" />
       </Head>
       <Layout>
         <Hero></Hero>
