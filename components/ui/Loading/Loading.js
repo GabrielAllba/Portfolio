@@ -1,10 +1,4 @@
 import React from "react";
-
-import Box from "@mui/material/Box";
-import LinearProgress from "@mui/material/LinearProgress";
-
-import { motion } from "framer-motion";
-
 import classes from './Loading.module.css'
 
 const Loading = () => {

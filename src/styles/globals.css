@@ -37,6 +37,8 @@
   --seventh-grey: #cfd6e6;
   --eight-grey: #969da9;
   --ninth-grey: #7582A6;
+  --ten-grey: #282a36;
+  --eleven-grey: #424558;
 
   --first-white: #F9FAFB;
   
@@ -95,6 +97,10 @@
   --information-awards-color: var(--ninth-grey);
   --title-awards-color: var(--third-blue);
   --description-awards-color: var(--fourth-grey);
+
+  --image-background-blog: var(--ten-grey);
+  --image-border-blog: var(--eleven-grey);
+  
 }
 
 [data-theme='light'] {
@@ -120,35 +126,39 @@
   
   --work-title : var(--fifth-black);
   --work-subtitle: var(--third-grey);
-
+  
   --collaborate-text: var(--third-grey);
-
+  
   --link: var(--fourth-blue);
-
+  
   --search-title: var(--third-grey);
-
+  
   --search-background: var(--first-white);
-
+  
   --search-border: var(--fifth-grey);
-
+  
   --blog-date: var(--second-blue);
-
+  
   --blog-description: var(--third-grey);
-
+  
   --progress-bar-background: var(--first-white);
   --progress-bar-active-background: var(--seventh-grey);
   --progress-bar-border: var(--seventh-grey);
   --progress-bar-active-border: var(--sixth-grey);
-
+  
   --skill-class: var(--seventh-grey);
-
+  
   
   --blog-primary: var(--fifth-black);
   --blog-secondary: var(--third-grey);
-
+  
   --information-awards-color: var(--third-grey);
   --title-awards-color: var(--sixth-black);
   --description-awards-color: var(--third-grey);
+  
+  --image-background-blog: var(--card-background);
+
+  --image-border-blog: var(--card-border);
 }
 
 
@@ -160,7 +170,7 @@ body{
   padding: 0;
   overflow-x: hidden;
   scroll-behavior: smooth;
-
+  
 }
 
 /* width */

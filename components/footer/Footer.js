@@ -2,6 +2,7 @@ import Badge from 'components/ui/Badge/Badge';
 import classes from './Footer.module.css'
 import Gradient from 'rgt'
 import Link from 'next/link'
+import Image from 'next/image'
 
 function Footer(){
     return (
@@ -13,35 +14,39 @@ function Footer(){
           paddingLeft: "0",
         }}
       >
-        <p
-          style={{
-            textAlign: "center",
-            fontFamily: "Inter-Bold",
-            letterSpacing: ".2rem",
-          }}
-        >
-          <Gradient dir="left-to-right" from="#FFCC90" to="#FF9A9A">
-            Riel
-          </Gradient>
-        </p>
+        
+          
+          <div className={classes.image_container}>
+            
+              <Image
+                className={classes.image}
+                src="/img/logo_profile.png"
+                width={300}
+                height={300}
+                alt="image"
+                quality="100"
+              ></Image>
+            
+          </div>
+        
         <p className={classes.footer_text}>Keep learning and leveling up.</p>
         <ul className={classes.navigation}>
-          <Link className={classes.anchor} href='/' >
+          <Link className={classes.anchor} href="/">
             <li className={classes.list}>About</li>
           </Link>
-          <Link className={classes.anchor} href='/' >
+          <Link className={classes.anchor} href="/">
             <li className={classes.list}>Skills</li>
           </Link>
-          <Link className={classes.anchor} href='/'>
+          <Link className={classes.anchor} href="/">
             <li className={classes.list}>Experience</li>
           </Link>
-          <Link className={classes.anchor} href='/'>
+          <Link className={classes.anchor} href="/">
             <li className={classes.list}>Work</li>
           </Link>
-          <Link className={classes.anchor} href='/'>
+          <Link className={classes.anchor} href="/">
             <li className={classes.list}>Awards</li>
           </Link>
-          <Link className={classes.anchor} href='/'>
+          <Link className={classes.anchor} href="/">
             <li className={classes.list}>Blog</li>
           </Link>
         </ul>

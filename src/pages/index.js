@@ -10,6 +10,7 @@ import Skills from 'components/home/skills';
 import Layout from 'components/layout/Layout'
 import { ThemeProvider } from 'next-themes';
 import Awards from '../../components/home/awards';
+import Head from 'next/head';
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
@@ -35,6 +36,11 @@ export default function Home() {
 
   return (
     <ThemeProvider themes={["dark", "light"]} enableSystem={false}>
+      <Head>
+        <title>Gabriel Allba</title>
+        <link rel="shortcut icon" href="/img/logo_profile.png" />
+        <meta property="og:title" content="Gabriel Allba" key="title"></meta>
+      </Head>
       <Layout>
         <Hero></Hero>
         <Skills></Skills>
@@ -45,9 +51,7 @@ export default function Home() {
         <Collaborate></Collaborate>
         <Footer></Footer>
       </Layout>
-      </ThemeProvider>
-    
-    
+    </ThemeProvider>
   );
  
 }

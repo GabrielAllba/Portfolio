@@ -71,11 +71,19 @@ function Blog(props){
         content: [
           {
             id: "1",
-            name: `Vercel is the platform for frontend developers, providing the speed and 
-                    reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice. <br><br>
-                    Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.
-                    <br><br>
-                    Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.`,
+            type: "code",
+            name: [
+              {
+                nameType: "code",
+                nameContent: 
+`int main(void)
+  {
+    puts("Hello World!");
+    return EXIT_SUCCESS;
+  }
+  `,
+              },
+            ],
           },
           {
             id: "2",
@@ -111,170 +119,6 @@ function Blog(props){
           },
         ],
         title: "Welcome message",
-        writerId: "kfj92u3r0",
-      },
-      {
-        id: "checkcheck",
-        color: ["#FFA6D6", "#A091FF"],
-        description:
-          "Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration.",
-        publish_date: "2022-01-01",
-        tags: ["asdfsdf"],
-        subContent: [
-          {
-            id: "adf",
-            name: "Bending light with refraction",
-          },
-          {
-            id: "2ghdf",
-            name: "Chromatic Dispersion",
-          },
-          {
-            id: "fdgasdf",
-            name: "Saturating and expanding",
-          },
-          {
-            id: "fdshsd",
-            name: "Adding volume and shininess",
-          },
-          {
-            id: "bfdhds",
-            name: "Bending",
-          },
-          {
-            id: "hfgdfg",
-            name: "Conclusion",
-          },
-          {
-            id: "54tdgfsa",
-            name: "Conclusion",
-          },
-        ],
-        content: [
-          {
-            id: "1",
-            name: `Vercel is the platform for frontend developers, providing the speed and 
-                    reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice. <br><br>
-                    Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.
-                    <br><br>
-                    Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.`,
-          },
-          {
-            id: "2",
-            name: `Vercel is the platform for frontend developers, providing the speed and 
-                    reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice. <br><br>
-                    Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.
-                    <br><br>
-                    Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.`,
-          },
-          {
-            id: "3",
-            name: `Vercel is the platform for frontend developers, providing the speed and 
-                    reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice. <br><br>
-                    Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.
-                    <br><br>
-                    Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.`,
-          },
-          {
-            id: "4",
-            name: `Vercel is the platform for frontend developers, providing the speed and 
-                    reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice. <br><br>
-                    Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.
-                    <br><br>
-                    Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.`,
-          },
-          {
-            id: "5",
-            name: `Vercel is the platform for frontend developers, providing the speed and 
-                    reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice. <br><br>
-                    Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.
-                    <br><br>
-                    Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.`,
-          },
-        ],
-        title: "Title 2",
-        writerId: "kfj92u3r0",
-      },
-      {
-        id: "dataketiga",
-        color: ["#FFA6D6", "#A091FF"],
-        description:
-          "Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration.",
-        publish_date: "2022-01-01",
-        tags: ["asdfsdf"],
-        subContent: [
-          {
-            id: "adf",
-            name: "Bending light with refraction",
-          },
-          {
-            id: "2ghdf",
-            name: "Chromatic Dispersion",
-          },
-          {
-            id: "fdgasdf",
-            name: "Saturating and expanding",
-          },
-          {
-            id: "fdshsd",
-            name: "Adding volume and shininess",
-          },
-          {
-            id: "bfdhds",
-            name: "Bending",
-          },
-          {
-            id: "hfgdfg",
-            name: "Conclusion",
-          },
-          {
-            id: "54tdgfsa",
-            name: "Conclusion",
-          },
-        ],
-        content: [
-          {
-            id: "1",
-            name: `Vercel is the platform for frontend developers, providing the speed and 
-                    reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice. <br><br>
-                    Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.
-                    <br><br>
-                    Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.`,
-          },
-          {
-            id: "2",
-            name: `Vercel is the platform for frontend developers, providing the speed and 
-                    reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice. <br><br>
-                    Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.
-                    <br><br>
-                    Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.`,
-          },
-          {
-            id: "3",
-            name: `Vercel is the platform for frontend developers, providing the speed and 
-                    reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice. <br><br>
-                    Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.
-                    <br><br>
-                    Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.`,
-          },
-          {
-            id: "4",
-            name: `Vercel is the platform for frontend developers, providing the speed and 
-                    reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice. <br><br>
-                    Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.
-                    <br><br>
-                    Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.`,
-          },
-          {
-            id: "5",
-            name: `Vercel is the platform for frontend developers, providing the speed and 
-                    reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice. <br><br>
-                    Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.
-                    <br><br>
-                    Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences. Vercel has zero-configuration support for 35+ frontend frameworks and integrates with your headless content, commerce, or database of choice.`,
-          },
-        ],
-        title: "data 3",
         writerId: "kfj92u3r0",
       },
     ];

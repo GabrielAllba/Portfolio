@@ -4,6 +4,7 @@ import Layout from "components/layout/Layout";
 import Loading from "components/ui/Loading/Loading";
 import { ThemeProvider } from "next-themes";
 import '../styles/globals.css'
+import Head from 'next/head'
 
 
 function MyApp({ Component, pageProps }) {
@@ -28,11 +29,16 @@ function MyApp({ Component, pageProps }) {
       Router.events.off("routeChangeError", end);
     };
   }, []);
+
   return (
     <>
-        {loading ? <Loading></Loading> : <Component {...pageProps} />}
+      <Head>
+        <title>Gabriel Allba</title>
+        <link rel="shortcut icon" href="/img/logo_profile.png" />
+        <meta property="og:title" content="Gabriel Allba" key="title"></meta>
+      </Head>
+      {loading ? <Loading></Loading> : <Component {...pageProps} />}
     </>
-    
   );
 }
 

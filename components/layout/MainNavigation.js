@@ -76,14 +76,27 @@ function MainNavigation() {
     
 
     return (
-      <header className={scrollY <= 100 ? classes.header : classes.header + ' ' + classes.header_padding}>
+      <header
+        className={
+          scrollY <= 100
+            ? classes.header
+            : classes.header + " " + classes.header_padding
+        }
+      >
         <Container className={classes.header_container}>
           <div className={classes.logo} style={{ letterSpacing: ".2rem" }}>
-            <Gradient dir="left-to-right" from="#FFCC90" to="#FF9A9A">
-              <Link href='/'>
-                Riel
-              </Link>
-            </Gradient>
+            <Link href='/'>
+              <div className={classes.image_container}>
+                <Image
+                  className={classes.image}
+                  src="/img/logo_profile.png"
+                  width={300}
+                  height={300}
+                  alt="image"
+                  quality="100"
+                ></Image>
+              </div>
+            </Link>
           </div>
           <nav>
             {isMobile && (
@@ -103,7 +116,6 @@ function MainNavigation() {
                     )}
                   </Button>
                 </li>
-
               </ul>
             )}
             {!isMobile && (
@@ -144,7 +156,13 @@ function MainNavigation() {
             )}
           </nav>
         </Container>
-        <div className={scrollY <= 100 ? classes.usual_background : classes.blured_background}></div>
+        <div
+          className={
+            scrollY <= 100
+              ? classes.usual_background
+              : classes.blured_background
+          }
+        ></div>
       </header>
     );
 }

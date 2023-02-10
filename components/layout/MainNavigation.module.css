@@ -107,3 +107,10 @@
   
   transition: .2s ease;
 }
+.image_container{
+  max-width: 10%;
+}
+.image{
+  width: 100% !important;
+  height: auto !important;
+}

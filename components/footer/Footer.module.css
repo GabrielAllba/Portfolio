@@ -5,6 +5,12 @@
     padding: 0;
 }
 
+
+.image{
+    width: 3rem !important;
+    height: auto !important;
+}
+
 .anchor{
     margin: 0 .5rem;
     text-decoration: none;
