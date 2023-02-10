@@ -179,7 +179,7 @@ function BlogDetail(props){
                               ? props.blogData.content[index].subContent.map(
                                   (s) =>
                                     s.name_type === "code" ? (
-                                      <div className={classes.margin_bottom}>
+                                      <div className={classes.margin_bottom} key={s.sub_id}>
                                         <CopyBlock
                                           language="jsx"
                                           text={s.content_subcontent}
@@ -190,7 +190,7 @@ function BlogDetail(props){
                                         />
                                       </div>
                                     ) : s.name_type === "image" ? (
-                                      <div className={classes.image_container}>
+                                      <div className={classes.image_container} key={s.sub_id}>
 
                                         <Image
                                           className={classes.image}
@@ -202,7 +202,7 @@ function BlogDetail(props){
                                           ></Image>
                                         </div>
                                     ) : (
-                                      <div style={{ margin: "1rem 0" }}>
+                                      <div style={{ margin: "1rem 0" }} key={s.sub_id}>
                                         {parse(s.content_subcontent)}
                                       </div>
                                     )
@@ -346,7 +346,7 @@ export async function getStaticProps(context){
               id: "1",
               subContent: [
                 {
-                  sub_id: "2_akldfadslkf",
+                  sub_id: "315hwfdga",
                   name_type: "text",
                   content_subcontent: `
                     Vercel is the platform for frontend developers, providing the speed and 
@@ -357,7 +357,7 @@ export async function getStaticProps(context){
                                 `,
                 },
                 {
-                  sub_id: "2_akldfadslkf",
+                  sub_id: "2_akldfa4575tregdslkf",
                   name_type: "text",
                   content_subcontent: `
                     Vercel is the platform for frontend developers, providing the speed and 
@@ -368,7 +368,7 @@ export async function getStaticProps(context){
                                 `,
                 },
                 {
-                  sub_id: "1_akldfadslkf",
+                  sub_id: "9657wregfgdf",
                   name_type: "code",
                   content_subcontent: `int main(void){
   puts("Hello adsfasdffasfasdfasdf!");
@@ -377,12 +377,12 @@ export async function getStaticProps(context){
                                 `,
                 },
                 {
-                  sub_id: "1_akldfadslkf",
+                  sub_id: "o78954iegfsgfd",
                   name_type: "image",
                   content_subcontent: "/img/avatar.png",
                 },
                 {
-                  sub_id: "1_akldfadslkf",
+                  sub_id: "jgfbntr24",
                   name_type: "image",
                   content_subcontent: "/img/certificate/pnc.png",
                 },
@@ -392,7 +392,7 @@ export async function getStaticProps(context){
               id: "2",
               subContent: [
                 {
-                  sub_id: "2aklsfjj",
+                  sub_id: "5784564wgfdv",
                   name_type: "text",
                   content_subcontent: `
                     Vercel is the platform for frontend developers, providing the speed and 
@@ -403,7 +403,7 @@ export async function getStaticProps(context){
                                 `,
                 },
                 {
-                  sub_id: "1_akldfadslkf",
+                  sub_id: "68562hfdbfd",
                   name_type: "image",
                   content_subcontent: "/img/avatar.png",
                 },
