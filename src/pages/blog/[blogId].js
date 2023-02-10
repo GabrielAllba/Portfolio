@@ -174,7 +174,7 @@ function BlogDetail(props){
                           id={`anchor_${index}`}
                         >
                           <h2 className={classes.title}>{sub.name}</h2>
-                          <p className={classes.main_text} key={sub.id}>
+                          <div className={classes.main_text} key={sub.id}>
                             {props.blogData.content[index]
                               ? props.blogData.content[index].subContent.map(
                                   (s) =>
@@ -208,7 +208,7 @@ function BlogDetail(props){
                                     )
                                 )
                               : ""}
-                          </p>
+                          </div>
                         </div>
                       );
                     })}
@@ -226,14 +226,50 @@ function BlogDetail(props){
                           key={`mobile_content_${sub.id}`}
                           id={`anchor_${index}`}
                         >
-                          <h2 className={classes.title}>
-                            {sub.name}
-                          </h2>
-                          <p className={classes.main_text}>
+                          <h2 className={classes.title}>{sub.name}</h2>
+                          <div className={classes.main_text} key={sub.id}>
                             {props.blogData.content[index]
-                              ? parse(props.blogData.content[index].name)
+                              ? props.blogData.content[index].subContent.map(
+                                  (s) =>
+                                    s.name_type === "code" ? (
+                                      <div
+                                        className={classes.margin_bottom}
+                                        key={s.sub_id}
+                                      >
+                                        <CopyBlock
+                                          language="jsx"
+                                          text={s.content_subcontent}
+                                          showLineNumbers={lineNumbers}
+                                          theme={dracula}
+                                          wrapLines={true}
+                                          codeBlock
+                                        />
+                                      </div>
+                                    ) : s.name_type === "image" ? (
+                                      <div
+                                        className={classes.image_container}
+                                        key={s.sub_id}
+                                      >
+                                        <Image
+                                          className={classes.image}
+                                          src={s.content_subcontent}
+                                          width={3000}
+                                          height={800}
+                                          alt="image"
+                                          quality="100"
+                                        ></Image>
+                                      </div>
+                                    ) : (
+                                      <div
+                                        style={{ margin: "1rem 0" }}
+                                        key={s.sub_id}
+                                      >
+                                        {parse(s.content_subcontent)}
+                                      </div>
+                                    )
+                                )
                               : ""}
-                          </p>
+                          </div>
                         </div>
                       );
                     })}
